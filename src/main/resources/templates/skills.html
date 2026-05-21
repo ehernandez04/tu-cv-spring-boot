@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nuestras Habilidades</h1>
+    <p th:if="${skills.isEmpty()}">No hay datos</p>
+
+    <ul th:if="${!skills.isEmpty()}">
+        <li th:each="skill : ${skills}" th:text="${skill}">Skill</li>
+    </ul>
+
+
+<!--    <h1>Nuestras Habilidades 2</h1>-->
+<!--    <p th:if="${skills2.isEmpty()}">No hay datos</p>-->
+
+<!--    <ul th:if="${!skills2.isEmpty()}">-->
+<!--        <li th:each="skill : ${skills2}" th:text="${skill}">Skill</li>-->
+<!--    </ul>-->
+
+    <form action="/skills" method="get">
+        <label th:for="nombre">Buscar</label>
+        <input type="text" th:value="${filter}" name="filter">
+        <button type="submit">Buscar</button>
+
+    </form>
+
+</body>
+</html>
