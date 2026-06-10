@@ -8,8 +8,13 @@
 <body>
     <h1>Agregar nueva Habilidad</h1>
     <form th:action="@{/skills/add}" th:object="${skill}" method="post">
-        <label  th:for="name">Nombre</label>
+
+        <label th:for="name">Nombre</label>
         <input type="text" th:field="*{name}">
+
+        <label th:for="level">Nivel</label>
+        <input type="text" th:field="*{level}">
+
         <button type="submit">Guardar</button>
     </form>
 

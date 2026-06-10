@@ -10,4 +10,5 @@ import lombok.NoArgsConstructor;
 public class Skill {
 
     private String name;
+    private String level;
 }

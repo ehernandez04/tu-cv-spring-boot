@@ -34,7 +34,6 @@ public class SkillsController {
 
         return "redirect:/skills";
 
-
     }
 
     @GetMapping("/new")

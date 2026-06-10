@@ -10,7 +10,7 @@
     <p th:if="${skills.isEmpty()}">No hay datos</p>
 
     <ul th:if="${!skills.isEmpty()}">
-        <li th:each="skill : ${skills}" th:text="${skill}">Skill</li>
+        <li th:each="skill : ${skills}" th:text="'Habilidad: ' + ${skill.name} + ' Nivel: ' + ${skill.level}">Skill</li>
     </ul>
 
 

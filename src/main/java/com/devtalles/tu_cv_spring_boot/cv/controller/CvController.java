@@ -13,7 +13,7 @@ public class CvController {
     @GetMapping({"/index", "", "/"})
     public String index(Model model){
         Person person = new Person("Erick", "Hernández", "Dev");
-        model.addAttribute("name", "Er");
+        model.addAttribute("name", "Erick");
         model.addAttribute("persona", person);
         return "index";
     }
