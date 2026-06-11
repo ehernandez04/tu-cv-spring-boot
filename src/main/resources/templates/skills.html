@@ -10,7 +10,16 @@
     <p th:if="${skills.isEmpty()}">No hay datos</p>
 
     <ul th:if="${!skills.isEmpty()}">
-        <li th:each="skill : ${skills}" th:text="'Habilidad: ' + ${skill.name} + ' Nivel: ' + ${skill.level}">Skill</li>
+        <li th:each="skill, stat : ${skills}" >
+            <span th:text="'Habilidad: ' + ${skill.name} + ' Nivel: ' + ${skill.level}"></span>
+            <a th:href="@{'/skills/id/'+ ${stat.index}}">Ver detalle</a>
+            <span th:text="${stat.count}"></span>
+            <span th:text="${stat.size}"></span>
+            <span th:if="${stat.first}">(Primera)</span>
+            <span th:if="${stat.last}">(Última)</span>
+            <span th:if="${stat.even}">[Par]</span>
+            <span th:if="${stat.odd}">[Impar]</span>
+        </li>
     </ul>
 
 
