@@ -7,8 +7,15 @@
 </head>
 <body>
     <h1>Nuestro CV</h1>
-    <p th:text="'Hola, ' + ${name} + ' ! ' ">Texto por defecto</p>
-    <p th:if="${name.length < 3}" style="color: red; ">Error, el nombre tiene menos de 3 letras...</p>
+    <p th:text="'Hola, ' + ${property} + ' ! ' ">Texto por defecto</p>
+    <p th:if="${property.length < 3}" style="color: red; ">Error, el nombre tiene menos de 3 letras...</p>
+
+<!--    <p th:text="${persona.firstName}">Texto por defecto</p>-->
+<!--    <p th:text="${persona.lastName}">Texto por defecto</p>-->
+<!--    <p th:text="${persona.profession}">Texto por defecto</p>-->
+
+    <p th:text="'property: ' + ${property}"></p>
+
 
 </body>
 </html>
