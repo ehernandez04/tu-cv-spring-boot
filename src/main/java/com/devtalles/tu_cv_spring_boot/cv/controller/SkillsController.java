@@ -56,6 +56,13 @@ public class SkillsController {
                 .filter(skill -> skill.getName().equalsIgnoreCase(name)
                 ).toList();
 
+        if(skillsFilter.isEmpty()){
+
+            model.addAttribute("filterMessage", "No se encontraron resultados para: " + name);
+
+            return "redirect:/skills";
+        }
+
         model.addAttribute("skills", skillsFilter);
         model.addAttribute("filterMessage", "Filtro: " + name);
 
